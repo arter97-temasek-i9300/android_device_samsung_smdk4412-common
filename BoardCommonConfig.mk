@@ -30,8 +30,8 @@ TARGET_ARCH_VARIANT_CPU := cortex-a9
 TARGET_CPU_VARIANT := cortex-a9
 ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
-COMMON_GLOBAL_CFLAGS += -mtune=cortex-a9 --param l1-cache-size=32 --param l1-cache-line-size=32 --param l2-cache-size=1024
-COMMON_GLOBAL_CPPFLAGS += -mtune=cortex-a9 --param l1-cache-size=32 --param l1-cache-line-size=32 --param l2-cache-size=1024
+TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp --param l1-cache-size=32 --param l1-cache-line-size=32 --param l2-cache-size=1024
+TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp --param l1-cache-size=32 --param l1-cache-line-size=32 --param l2-cache-size=1024
 
 EXYNOS4X12_ENHANCEMENTS := true
 EXYNOS4_ENHANCEMENTS := true
