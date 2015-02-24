@@ -6,7 +6,8 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
 
-    <application android:label="@string/app_name">
+    <application android:label="@string/app_name"
+                 android:theme="@style/Theme.Settings">
         <activity
             android:name="com.cyanogenmod.settings.device.DisplaySettings"
             android:launchMode="singleTop"
@@ -28,6 +29,7 @@
         </receiver>
 
         <activity android:name=".ScreenFragmentActivity" />
+        <activity android:name=".RadioFragmentActivity" />
         
     </application>
 </manifest>

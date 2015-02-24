@@ -16,46 +16,52 @@
 
 package com.cyanogenmod.settings.device;
 
-import java.io.IOException;
 import android.content.Context;
-import android.util.AttributeSet;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.Preference;
+import android.util.AttributeSet;
 import android.preference.ListPreference;
+import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-public class mDNIeNegative extends ListPreference implements OnPreferenceChangeListener {
+public class Hspa extends ListPreference implements OnPreferenceChangeListener {
 
-    private static String FILE = null;
+    private static final String FILE = "/system/app/SamsungServiceMode.apk";
+    private Context mCtx;
 
-    public mDNIeNegative(Context context, AttributeSet attrs) {
+    public Hspa(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.setOnPreferenceChangeListener(this);
-        FILE = context.getResources().getString(R.string.mdnie_negative_sysfs_file);
+        mCtx = context;
     }
 
-    public static boolean isSupported(String filePath) {
-        return Utils.fileExists(filePath);
+    public static boolean isSupported() {
+        return Utils.fileExists(FILE);
     }
 
     /**
-     * Restore mdnie user mode setting from SharedPreferences. (Write to kernel.)
+     * Restore hspa setting from SharedPreferences. (Write to kernel.)
      * @param context       The context to read the SharedPreferences from
      */
     public static void restore(Context context) {
-        FILE = context.getResources().getString(R.string.mdnie_negative_sysfs_file);
-        if (!isSupported(FILE)) {
+        if (!isSupported()) {
             return;
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        Utils.writeValue(FILE, sharedPrefs.getString(DisplaySettings.KEY_MDNIE_NEGATIVE, "0"));
+        sendIntent(context, sharedPrefs.getString(DisplaySettings.KEY_HSPA, "23"));
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Utils.writeValue(FILE, (String) newValue);
+        sendIntent(mCtx, (String) newValue);
         return true;
     }
 
+    private static void sendIntent(Context context, String value) {
+        Intent i = new Intent("com.cyanogenmod.SamsungServiceMode.EXECUTE");
+        i.putExtra("sub_type", 20); // HSPA Setting
+        i.putExtra("data", value);
+        context.sendBroadcast(i);
+    }
 }

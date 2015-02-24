@@ -27,7 +27,9 @@
     <string name="mdnie_scenario_summary_head">Set the mDNIe Scenario</string>
     <string name="mdnie_mode_title_head">Mode</string>
     <string name="mdnie_mode_summary_head">Set the mDNIe Mode</string>
-    <string name="mdnie_negative_title_head">Negative Mode</string>
-    <string name="mdnie_negative_summary_head">Enable/Disable inverted colors</string>
 
+    <!-- Radio Preference -->
+    <string name="category_radio_title">Radio</string>
+    <string name="hspa_title_head">HSPA</string>
+    <string name="hspa_summary_head">Enable HSDPA/HSUPA</string>
 </resources>

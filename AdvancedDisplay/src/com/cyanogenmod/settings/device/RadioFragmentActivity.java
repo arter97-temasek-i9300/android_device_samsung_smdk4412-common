@@ -24,7 +24,6 @@ import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
-import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
@@ -32,33 +31,33 @@ import android.util.Log;
 
 import com.cyanogenmod.settings.device.R;
 
-public class ScreenFragmentActivity extends PreferenceFragment {
+public class RadioFragmentActivity extends PreferenceFragment {
 
     private static final String PREF_ENABLED = "1";
-    private static final String TAG = "DisplaySettings_Screen";
-    private mDNIeScenario mmDNIeScenario;
-    private mDNIeMode mmDNIeMode;
+    private static final String TAG = "DeviceSettings_Radio";
+
+    private static boolean sHspa;
+    private Hspa mHspa;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.screen_preferences);
-        PreferenceScreen preferenceScreen = getPreferenceScreen();
+        addPreferencesFromResource(R.xml.radio_preferences);
+
+        PreferenceScreen prefSet = getPreferenceScreen();
         Resources res = getResources();
+        sHspa = res.getBoolean(R.bool.has_hspa);
 
-        /* mDNIe */
-        mmDNIeScenario = (mDNIeScenario) findPreference(DisplaySettings.KEY_MDNIE_SCENARIO);
-        mmDNIeScenario.setEnabled(mDNIeScenario.isSupported(res.getString(R.string.mdnie_scenario_sysfs_file)));
-
-        mmDNIeMode = (mDNIeMode) findPreference(DisplaySettings.KEY_MDNIE_MODE);
-        mmDNIeMode.setEnabled(mDNIeMode.isSupported(res.getString(R.string.mdnie_mode_sysfs_file)));
+        mHspa = (Hspa) findPreference(DisplaySettings.KEY_HSPA);
+        mHspa.setEnabled(sHspa);
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
 
         String key = preference.getKey();
+
         Log.w(TAG, "key: " + key);
 
         return true;

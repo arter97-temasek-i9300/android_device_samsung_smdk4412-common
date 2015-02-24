@@ -22,7 +22,5 @@
     <string name="mdnie_scenario_summary_head">Wähle das mDNIe Szenario</string>
     <string name="mdnie_mode_title_head">Modus</string>
     <string name="mdnie_mode_summary_head">Wähle den mDNIe Modus</string>
-    <string name="mdnie_negative_title_head">Negativ Modus</string>
-    <string name="mdnie_negative_summary_head">Invertiere Farben</string>
 
 </resources>

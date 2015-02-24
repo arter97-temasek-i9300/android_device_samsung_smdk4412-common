@@ -15,8 +15,7 @@
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string-array name="mdnie_scenario_entries">
-        <item>CyanogenMod (Default)</item>
-        <item>UI</item>
+        <item>UI (Default)</item>
         <item>Video</item>
         <item>Video Warm</item>
         <item>Video Cold</item>
@@ -24,6 +23,10 @@
         <item>Navigation</item>
         <item>Gallery</item>
         <item>VT</item>
+        <item>Browser</item>
+        <item>E-book</item>
+        <item>E-Mail</item>
+
     </string-array>
 
     <string-array name="mdnie_scenario_entries_values" translatable="false">
@@ -36,6 +39,8 @@
         <item>6</item>
         <item>7</item>
         <item>8</item>
+        <item>9</item>
+        <item>10</item>
     </string-array>
 
     <string-array name="mdnie_mode_entries">
@@ -43,6 +48,7 @@
         <item>Standard</item>
         <item>Natural</item>
         <item>Movie</item>
+        <item>Auto</item>
     </string-array>
 
     <string-array name="mdnie_mode_entries_values" translatable="false">
@@ -50,16 +56,7 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
-    </string-array>
-
-    <string-array name="mdnie_negative_entries">
-        <item>Normal</item>
-        <item>Inverted</item>
-    </string-array>
-
-    <string-array name="mdnie_negative_entries_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
+        <item>4</item>
     </string-array>
 
     <string-array name="touchkey_timeout_entries">

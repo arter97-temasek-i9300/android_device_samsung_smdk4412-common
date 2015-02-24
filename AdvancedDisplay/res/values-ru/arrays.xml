@@ -15,7 +15,7 @@
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string-array name="mdnie_scenario_entries">
-        <item>CyanogenMod (По умолч.)</item>
+        <item>UI (По умолч.)</item>
         <item>Видео</item>
         <item>Видео (тёпл.)</item>
         <item>Видео (хол.)</item>
@@ -23,6 +23,9 @@
         <item>Навигация</item>
         <item>Галерея</item>
         <item>VT</item>
+        <item>Браузер</item>
+        <item>Электронная книга</item>
+        <item>Электронная почта</item>
     </string-array>
 
     <string-array name="mdnie_mode_entries">
@@ -30,6 +33,7 @@
         <item>Стандартный</item>
         <item>Натуральный</item>
         <item>Кино</item>
+        <item>Aвтоматически</item>
     </string-array>
 
     <string-array name="mdnie_negative_entries">
