@@ -22,6 +22,4 @@
     <!-- Screen timeout default = 30 seconds -->
     <integer name="def_screen_off_timeout">30000</integer>
     <!-- Default value of Settings.System.NOISE_SUPPRESSION -->
-
-    <bool name="def_noise_suppression">true</bool>
 </resources>
