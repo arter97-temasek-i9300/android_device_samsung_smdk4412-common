@@ -116,6 +116,7 @@ BOARD_USE_METADATABUFFERTYPE := true
 BOARD_USES_MFC_FPS := true
 BOARD_USE_S3D_SUPPORT := true
 BOARD_USE_CSC_FIMC := false
+BOARD_CANT_REALLOCATE_OMX_BUFFERS := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
@@ -178,7 +179,7 @@ BACKLIGHT_PATH := /sys/class/backlight/panel/brightness
 # Override healthd HAL
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.exynos4
 
-# Show Battery Percentage in LPM mode
+# LPM Battery Percentage
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # inherit from the proprietary version
@@ -189,7 +190,7 @@ RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 HAVE_SELINUX := true
-TW_INCLUDE_JB_CRYPTO := true
+# TW_INCLUDE_JB_CRYPTO := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_INTERNAL_STORAGE_PATH := "/data/media"
@@ -198,4 +199,4 @@ TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_MAX_BRIGHTNESS := 255
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
-TW_DISABLE_TTF := true
+# TW_DISABLE_TTF := true
